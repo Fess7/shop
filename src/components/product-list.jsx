@@ -8,7 +8,7 @@ const ProductList = ({products}) => {
 
     const getTotalPrice = (items = []) => {
         return items.reduce((acc, item) => {
-            return acc += item.price;
+            return acc += Number(item.price);
         }, 0);
     };
 
