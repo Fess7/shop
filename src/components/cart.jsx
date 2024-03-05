@@ -23,7 +23,7 @@ const Cart = ({products, setAddedProducts}) => {
             queryId,
         };
         console.log('queryId', queryId, products, getTotalPrice(products));
-        fetch('http://localhost/orders.php', {
+        fetch('https://ubegubgif.beget.app/orders.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
