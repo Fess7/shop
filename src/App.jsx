@@ -1,8 +1,10 @@
 import ProductList from './components/product-list.jsx';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
 import {useTelegram} from './hooks/useTelegram.jsx';
+import Cart from './components/cart.jsx';
 
 function App() {
+    const [addedProducts, setAddedProducts] = useState([]);
     const {tg} = useTelegram();
 
     useEffect(() => {
@@ -99,7 +101,10 @@ function App() {
 
     return (
         <>
-            <ProductList products={products}/>
+            <ProductList products={products}
+                         addedProducts={addedProducts}
+                         setAddedProducts={setAddedProducts}/>
+            <Cart products={addedProducts} setAddedProducts={setAddedProducts}/>
         </>
     );
 }
